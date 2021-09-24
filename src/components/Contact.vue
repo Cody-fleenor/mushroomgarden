@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid style="background-color: white">
+  <v-container style="background-color: white">
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field
         v-model="name"
@@ -20,15 +20,30 @@
 
       <v-checkbox
         v-model="checkbox"
-        :rules="[(v) => !!v || 'You must agree to continue!']"
-        label="Do you agree?"
-        required
+        color="red darken-3"
+        label="Can we contact you about special offers?"
       ></v-checkbox>
 
-      <v-btn :disabled="!valid" color="#99CC63" class="mr-4" @click="validate">
-        Submit
+      <v-btn
+        style="text-transform: lowercase"
+        dark
+        :disabled="!valid"
+        depressed
+        color="#99CC63"
+        class="mr-4"
+        @click="validate"
+      >
+        Send
       </v-btn>
-      <v-btn text color="error" class="mr-4" @click="reset"> Clear </v-btn>
+      <v-btn
+        style="text-transform: lowercase"
+        text
+        color="error"
+        class="mr-4"
+        @click="reset"
+      >
+        Clear
+      </v-btn>
     </v-form>
   </v-container>
 </template>

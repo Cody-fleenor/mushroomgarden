@@ -34,13 +34,6 @@
               {{ categorie.name }}
             </h4>
           </v-btn>
-          <!-- <v-list style="display: block; max-width: 100px;" v-for="(categorie, key) in categories" :key="key">
-        <v-list-item>
-          <router-link style="text-transform: none; text-decoration: none; color: #DD2E44;" :to="categorie.url">
-            {{categorie.name}}
-          </router-link>
-        </v-list-item>
-      </v-list> -->
         </v-col>
         <v-col sm="12" md="10">
           <div v-if="!isloaded" class="page-loader">
@@ -152,7 +145,7 @@ export default {
             product.subtitle.toLowerCase().includes(this.search.toLowerCase())
           );
         }),
-        "title"
+        // "title"
       );
     },
   },
