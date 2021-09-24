@@ -20,6 +20,12 @@
         v-for="(product, id) in products.slice(0, 3)"
         :key="id"
       >
+        <!-- <div v-if="!isloaded" class="page-loader">
+          <div class="cube"></div>
+          <div class="cube"></div>
+          <div class="cube"></div>
+          <div class="cube"></div>
+        </div> -->
         <v-card style="min-height: 350px; min-width: 300px">
           <v-row>
             <v-col cols="12">
@@ -105,13 +111,18 @@ import HeroGallery from "./HeaderImageComponent.vue";
 export default {
   components: { HeroGallery },
   data: () => ({
+    isloaded: false,
     products: [],
   }),
+
   mounted() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((res) => (this.products = res))
       .then((json) => console.log(json));
+    setTimeout(() => {
+      this.isloaded = true;
+    }, 2500);
   },
 };
 </script>

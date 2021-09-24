@@ -14,7 +14,7 @@
       <NavMenu />
     </v-menu>
     <v-spacer></v-spacer>
-    <h3 style="color: #ff9898">Mushroom Garden</h3>
+    <h3 style="color: #ff9898">Mushroom Gardens</h3>
     <v-spacer></v-spacer>
     <NavCart />
   </v-app-bar>
